@@ -8,7 +8,7 @@
 
 <script lang=ts>
 import { defineComponent } from 'vue'
-import { useShell } from '/@/composables'
+import { useShell } from '/@/composables/electron'
 
 export default defineComponent({
   name: 'landing-page',
@@ -30,17 +30,6 @@ export default defineComponent({
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 16px;
-}
-
 #wrapper {
   background: linear-gradient(to bottom, rgba(33, 33, 33, 1), rgba(22, 22, 22, 1));
   height: 100vh;
