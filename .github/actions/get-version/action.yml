@@ -4,6 +4,6 @@ outputs:
   version:
     description: The version
 runs:
-  using: 'node12'
+  using: 'node14'
   main: index.js
-  
+
