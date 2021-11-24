@@ -81,7 +81,7 @@ jobs:
       id: version
       uses: ci010/conventional-changelog-action@master
       with:
-        github-token: ${{ secrets.github_token }}
+        github-token: ${{ secrets.SK_GITHUB_TOKEN }}
         version: ${{ steps.package.outputs.version }}
         tag-prefix: 'v'
     - name: Update package.json and CHANGELOG.md
@@ -93,7 +93,7 @@ jobs:
       if: ${{ steps.version.outputs.skipped == 'false' }}
       uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.SK_GITHUB_TOKEN }}
         commit-message: >-
           ${{ format('chore(release): {0}', steps.version.outputs.version) }}
         title: ${{ format('Prepare Release {0}', steps.version.outputs.version) }}
@@ -133,13 +133,13 @@ jobs:
       id: prepare_release
       uses: ci010/conventional-changelog-action@master
       with:
-        github-token: ${{ secrets.github_token }}
+        github-token: ${{ secrets.SK_GITHUB_TOKEN }}
         tag-prefix: 'v'
     - name: Draft Release
       id: create_release
       uses: voxelum/create-release@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.SK_GITHUB_TOKEN }}
       with:
         tag_name: ${{ format('v{0}', steps.package.outputs.version) }}
         release_name: ${{ format('v{0}', steps.package.outputs.version) }}
