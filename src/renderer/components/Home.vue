@@ -14,12 +14,12 @@ export default defineComponent({
   name: 'landing-page',
 
   created() {
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', (event) => {
       useShell().beep()
       const colors = ['green', 'blue', 'purple', 'pink', 'red']
       this.color = colors[Math.floor(Math.random() * colors.length)]
-      this.pressed = e.key
-      e.preventDefault()
+      this.pressed = event.key
+      event.preventDefault()
     })
   },
 
