@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper">
     <div class="flex-center">
-      <div id="letter">{{ pressed }}</div>
+      <div id="letter" :class="color">{{ pressed }}</div>
     </div>
   </div>
 </template>
@@ -16,6 +16,8 @@ export default defineComponent({
   created() {
     document.addEventListener('keydown', (e) => {
       useShell().beep()
+      const colors = ['green', 'blue', 'purple', 'pink', 'red']
+      this.color = colors[Math.floor(Math.random() * colors.length)]
       this.pressed = e.key
       e.preventDefault()
     })
@@ -23,6 +25,7 @@ export default defineComponent({
 
   data() {
     return {
+      color: '',
       pressed: ''
     }
   }
@@ -46,8 +49,27 @@ export default defineComponent({
 }
 
 #letter {
-  color: #42B4B9;
   text-align: center;
   font-size: 9vw;
+}
+
+.red {
+  color: #B44242;
+}
+
+.blue {
+  color: #42B4B9;
+}
+
+.green {
+  color: #42B983;
+}
+
+.purple {
+  color: #8342B9;
+}
+
+.pink {
+  color: #B94278;
 }
 </style>
