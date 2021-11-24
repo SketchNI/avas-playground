@@ -10,7 +10,7 @@ Windows Defender may alarm you about a Trojan horse. It's a
 false positive because of how blatant I am about capturing
 keystrokes. 
 
-#### Fix Windows Defender Threat Alert
+### Fix Windows Defender Threat Alert
 To add a file exclusion to Windows 10:
 
 1. Press Windows key and type Windows Defender. Press Enter.
