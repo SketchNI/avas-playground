@@ -1,16 +1,6 @@
 name: Build
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'build/**'
-      - 'scripts/*'
-      - 'src/**'
-      - 'static/**'
-      - 'package.json'
-      - 'package-lock.json'
+on: [push]
 
 jobs:
   build:
