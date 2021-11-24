@@ -16,7 +16,7 @@ export default defineComponent({
   created() {
     document.addEventListener('keydown', (e) => {
       useShell().beep()
-      const colors = ['green', 'blue', 'purple', 'pink']
+      const colors = ['green', 'blue', 'purple', 'pink', 'red']
       this.color = colors[Math.floor(Math.random() * colors.length)]
       this.pressed = e.key
       e.preventDefault()
@@ -51,6 +51,10 @@ export default defineComponent({
 #letter {
   text-align: center;
   font-size: 9vw;
+}
+
+.red {
+  color: #B44242;
 }
 
 .blue {
