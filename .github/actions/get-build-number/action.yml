@@ -4,6 +4,6 @@ outputs:
   build_number:
     description: The release body
 runs:
-  using: 'node14'
+  using: 'node12'
   main: index.js
 
