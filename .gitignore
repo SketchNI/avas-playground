@@ -3,6 +3,13 @@
 #
 # Recommended template: Node.gitignore
 /.idea
+/build/*.zip
+/build/*.7z
+/build/*.exe.blockmap
+/build/*.exe
+/build/*.yml
+
+
 # TODO: where does this rule come from?
 docs/_book
 
@@ -127,3 +134,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+/build/win-unpacked/
+/build/builder-debug.yml
+/build/builder-effective-config.yaml
