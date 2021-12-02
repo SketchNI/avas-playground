@@ -50,7 +50,7 @@ export default defineComponent({
 
 #letter {
   text-align: center;
-  font-size: 9vw;
+  font-size: 10vw;
 }
 
 .red {

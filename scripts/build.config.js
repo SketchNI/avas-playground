@@ -13,34 +13,8 @@ const config = {
     perMachine: true,
     differentialPackage: true
   },
-  dmg: {
-    contents: [
-      {
-        x: 410,
-        y: 150,
-        type: "link",
-        path: "/Applications"
-      },
-      {
-        x: 130,
-        y: 150,
-        type: "file"
-      }
-    ]
-  },
-  mac: {
-    icon: "build/icons/icon.icns",
-    target: [
-      {
-        target: "zip"
-      },
-      {
-        target: "dmg"
-      }
-    ]
-  },
   win: {
-    icon: "build/icons/icon.ico",
+    icon: "build/icons/playground.ico",
     target: [
       // disable build for x32 by default
       // 'nsis:ia32',
@@ -58,23 +32,6 @@ const config = {
         arch: [
           "x64"
         ]
-      }
-    ]
-  },
-  linux: {
-    icon: "build/icons",
-    target: [
-      {
-        target: "deb"
-      },
-      {
-        target: "rpm"
-      },
-      {
-        target: "AppImage"
-      },
-      {
-        target: "snap"
       }
     ]
   },

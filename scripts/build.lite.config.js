@@ -5,21 +5,8 @@ const baseConfig = require("./build.base.config")
  */
 const config = {
   ...baseConfig,
-  mac: {
-    icon: "build/icons/icon.icns",
-    target: [
-      {
-        target: "zip"
-      }
-    ],
-    files: [
-      // 'node_modules/7zip-bin/**/*',
-      // '!node_modules/7zip-bin/linux/**',
-      // '!node_modules/7zip-bin/win/**'
-    ]
-  },
   win: {
-    icon: "build/icons/icon.ico",
+    icon: "build/icons/build/icons/playground.ico",
     target: [
       {
         target: "zip",
@@ -35,19 +22,6 @@ const config = {
       // '!node_modules/7zip-bin/mac/**'
     ]
   },
-  linux: {
-    icon: "build/icons",
-    target: [
-      {
-        target: "tar.gz"
-      }
-    ],
-    files: [
-      // 'node_modules/7zip-bin/**/*',
-      // '!node_modules/7zip-bin/win/**',
-      // '!node_modules/7zip-bin/mac/**'
-    ]
-  }
 }
 
 module.exports = config
