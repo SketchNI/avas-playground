@@ -1,4 +1,4 @@
-import { createSemanticDiagnosticsBuilderProgram, createWatchCompilerHost, createWatchProgram, DiagnosticCategory, formatDiagnosticsWithColorAndContext, sys } from 'typescript'
+import { createSemanticDiagnosticsBuilderProgram, createWatchCompilerHost, createWatchProgram, DiagnosticCategory, formatDiagnosticsWithColorAndContext, sys } from "typescript"
 
 /**
  * @param {number | void} timeout
@@ -132,7 +132,7 @@ const create = ({ tsconfig, tsconfigOverride, wait } = {}) => {
    * @type {import('rollup').Plugin}
    */
   const plugin = {
-    name: 'typescript:checker',
+    name: "typescript:checker",
     buildStart() {
       if (!programs) {
         programs = configPath.map((c) => createWatchProgram(createWatchCompilerHost(
@@ -148,7 +148,7 @@ const create = ({ tsconfig, tsconfigOverride, wait } = {}) => {
       }
     },
     async load(id) {
-      if (!id.endsWith('.ts')) {
+      if (!id.endsWith(".ts")) {
         return null
       }
       const promise = watcher.wait()
@@ -170,7 +170,7 @@ const create = ({ tsconfig, tsconfigOverride, wait } = {}) => {
       }
     },
     watchChange(id) {
-      if (!id.endsWith('.ts')) {
+      if (!id.endsWith(".ts")) {
         return
       }
       watcher.watch()

@@ -1,6 +1,6 @@
-import chalk from 'chalk'
-import { transform } from 'esbuild'
-import { extname } from 'path'
+import chalk from "chalk"
+import { transform } from "esbuild"
+import { extname } from "path"
 
 /**
  * Wrap esbuild to build typescript
@@ -8,12 +8,12 @@ import { extname } from 'path'
  */
 const createPlugin = () => {
   return ({
-    name: 'main:esbuild',
+    name: "main:esbuild",
     async resolveId(id, importer) {
-      if (/\?commonjs/.test(id) || id === 'commonjsHelpers.js' || id.endsWith('js')) {
+      if (/\?commonjs/.test(id) || id === "commonjsHelpers.js" || id.endsWith("js")) {
         return
       }
-      if (id.endsWith('.ts')) {
+      if (id.endsWith(".ts")) {
         return
       }
       const tsResult = await this.resolve(`${id}.ts`, importer, { skipSelf: true })
@@ -26,10 +26,10 @@ const createPlugin = () => {
       }
     },
     async transform(code, id) {
-      if (id.endsWith('js') || id.endsWith('js?commonjs-proxy')) {
+      if (id.endsWith("js") || id.endsWith("js?commonjs-proxy")) {
         return
       }
-      if (!id.endsWith('.ts')) {
+      if (!id.endsWith(".ts")) {
         return
       }
       function printMessage(m, code) {
@@ -44,7 +44,7 @@ const createPlugin = () => {
               .map((l) => l.length)
               .reduce((total, l) => total + l + 1, 0) + column
           console.error(
-            require('@vue/compiler-dom').generateCodeFrame(code, offset, offset + 1)
+            require("@vue/compiler-dom").generateCodeFrame(code, offset, offset + 1)
           )
         }
       }
@@ -54,7 +54,7 @@ const createPlugin = () => {
           loader: extname(id).slice(1),
           sourcemap: true,
           sourcefile: id,
-          target: 'es2020'
+          target: "es2020"
         })
         if (result.warnings.length) {
           console.error(`[main] warnings while transforming ${id} with esbuild:`)
@@ -74,7 +74,7 @@ const createPlugin = () => {
           console.error(e)
         }
         return {
-          code: '',
+          code: "",
           map: undefined
         }
       }
@@ -82,12 +82,12 @@ const createPlugin = () => {
     buildEnd(error) {
       // Stop the service early if there's error
       if (error && !this.meta.watchMode) {
-        console.log('esbuild service stop!')
+        console.log("esbuild service stop!")
       }
     },
     generateBundle() {
       if (!this.meta.watchMode) {
-        console.log('esbuild service stop!')
+        console.log("esbuild service stop!")
       }
     }
   })

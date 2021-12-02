@@ -1,11 +1,11 @@
-import { createRouter, createMemoryHistory } from 'vue-router'
-import Home from '/@/components/Home.vue'
+import { createRouter, createMemoryHistory } from "vue-router"
+import Home from "/@/components/Home.vue"
 
 const router = createRouter({
   history: createMemoryHistory(),
   routes: [
     {
-      path: '/',
+      path: "/",
       component: Home
     }
   ]

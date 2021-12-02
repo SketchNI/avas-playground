@@ -7,16 +7,16 @@
 </template>
 
 <script lang=ts>
-import { defineComponent } from 'vue'
-import { useShell } from '/@/composables/electron'
+import { defineComponent } from "vue"
+import { useShell } from "/@/composables/electron"
 
 export default defineComponent({
-  name: 'landing-page',
+  name: "landing-page",
 
   created() {
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener("keydown", (event) => {
       useShell().beep()
-      const colors = ['green', 'blue', 'purple', 'pink', 'red']
+      const colors = ["green", "blue", "purple", "pink", "red"]
       this.color = colors[Math.floor(Math.random() * colors.length)]
       this.pressed = event.key
       event.preventDefault()
@@ -25,8 +25,8 @@ export default defineComponent({
 
   data() {
     return {
-      color: '',
-      pressed: ''
+      color: "",
+      pressed: ""
     }
   }
 })

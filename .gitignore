@@ -135,5 +135,3 @@ dist
 .pnp.*
 
 /build/win-unpacked/
-/build/builder-debug.yml
-/build/builder-effective-config.yaml

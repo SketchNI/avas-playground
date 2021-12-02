@@ -78,7 +78,7 @@ jobs:
         with:
           token: ${{ secrets.SK_GITHUB_TOKEN }}
           commit-message: >-
-            ${{ format('chore(release): {0}', steps.version.outputs.version) }}
+            Preparing release
           title: ${{ format('Prepare Release {0}', steps.version.outputs.version) }}
           body: ${{ steps.version.outputs.clean_changelog }}
           branch: prepare-release
