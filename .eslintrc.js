@@ -1,5 +1,5 @@
 /**
- * @type {import('eslint').Linter.Config}
+ * @type {import("eslint").Linter.Config}
  */
 module.exports = {
   env: {
@@ -8,8 +8,8 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
-    'standard'
+    "plugin:vue/essential",
+    "standard"
   ],
   globals: {
     __static: true,
@@ -20,21 +20,22 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 12,
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module'
+    parser: "@typescript-eslint/parser",
+    sourceType: "module"
   },
   plugins: [
-    'vue',
-    '@typescript-eslint'
+    "vue",
+    "@typescript-eslint"
   ],
   rules: {
-    'no-trailing-spaces': 0,
-    'space-before-function-paren': 0,
-    'vue/no-multiple-template-root': 0,
-    'import/no-absolute-path': 0
+    quotes: [2, "double", { avoidEscape: false }],
+    "no-trailing-spaces": 0,
+    "space-before-function-paren": 0,
+    "vue/no-multiple-template-root": 0,
+    "import/no-absolute-path": 0
   },
   ignorePatterns: [
-    'node_modules/**',
-    'dist/**'
+    "node_modules/**",
+    "dist/**"
   ]
 }

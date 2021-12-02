@@ -1,4 +1,4 @@
-import type Electron from 'electron'
+import type Electron from "electron"
 
 const { shell, clipboard, ipcRenderer, dialog } = (window as any).electron as typeof Electron
 
