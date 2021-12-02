@@ -1,6 +1,6 @@
 {
   "name": "avas-playground",
-  "version": "1.0.7-alpha",
+  "version": "1.0.7",
   "private": true,
   "description": "My niece loves to press keys on the keyboard to get Windows to make a DING noise. This app will capture all keyboard input, play DING and harmlessly discard all input while it is running.",
   "repository": {
